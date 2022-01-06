@@ -14,8 +14,8 @@ class ProductosApi {
   };
 
   guardar(prod) {
-    const { titulo, precio, thumbnail } = prod;
-    if (!titulo || !precio ) return { error: 'titulo y precio son campos obligatorios' };
+    const { nombre, precio } = prod;
+    if (!nombre || !precio ) return { error: 'nombre y precio son campos obligatorios' };
     if (isNaN(precio)) return { error: 'El precio debe ser de tipo numérico' };
     const nuevoProd = { ...prod, id: ++ProductosApi.idCount };
     this.productos.push(nuevoProd);
