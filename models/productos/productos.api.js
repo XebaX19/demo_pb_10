@@ -14,11 +14,10 @@ class ProductosApi {
   };
 
   guardar(prod) {
-    const cuerpoFormulario = Object.keys(prod);
-    const { titulo, precio, thumbnail } = cuerpoFormulario;
-    if (!titulo || !precio ) return { error: 'Titulo y precio son campos obliigatorios' };
+    const { titulo, precio, thumbnail } = prod;
+    if (!titulo || !precio ) return { error: 'titulo y precio son campos obligatorios' };
     if (isNaN(precio)) return { error: 'El precio debe ser de tipo numérico' };
-    const nuevoProd = { ...prod, id: ++productosApi.idCount };
+    const nuevoProd = { ...prod, id: ++ProductosApi.idCount };
     this.productos.push(nuevoProd);
     return nuevoProd;
   };
