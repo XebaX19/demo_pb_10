@@ -1,3 +1,3 @@
 module.exports = {
-  ProductosApi: require('./productos/productos.api')
+  PersonasApi: require('./personas/personas.api')
 }

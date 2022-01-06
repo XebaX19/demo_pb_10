@@ -1,5 +1,5 @@
 const express = require('express');
-const rutasProductos = require('./productos/productos.routes');
+const rutasPersonas = require('./personas/personas.routes');
 const router = express.Router();
 
 // Middlewares
@@ -7,6 +7,6 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 // Rutas
-router.use('/productos', rutasProductos);
+router.use('/personas', rutasPersonas);
 
 module.exports = router;
