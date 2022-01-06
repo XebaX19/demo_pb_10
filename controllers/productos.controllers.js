@@ -42,7 +42,7 @@ const updateProductByIdController = (req, res) => {
 
 const deleteProductByIdController = (req, res) => {
   const { idProducto } = req.params;
-  const deletedProduct = products.deleteById(idProducto);
+  const deletedProduct = productos.eliminar(idProducto);
   if (deletedProduct.error) return res.status(404).send(deletedProduct.error);
   return res.json(deletedProduct);
 };
