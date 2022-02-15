@@ -1,0 +1,35 @@
+//- Con "-" se ejecuta código JS
+-const nombre = 'Seba';
+
+//- Código JS multilínea: va con "-" y luego un enter y un tab
+-
+    const arreglo = [
+        1,
+        2,
+        3
+    ]
+
+html
+    head 
+        title Mi página con PUG
+    body
+        //- Forma 1:
+        h1(style="color:blue;") Hola desde mi página con PUG
+        
+        //- Forma 2:
+        h2= "Otra forma de escribir lo que está entre los tags" 
+        h2=  `Hola ${nombre}`
+
+        //- Lo que está a la derecha del = lo ejecuta como código Javascritp
+        h2= 4+6
+
+        //- Forma 3, con "!="" se setea HTML
+        h2!='<i>Hola</i>'
+
+        //-IF en PUG...además se pasa la variable en el .render del index
+        if showList
+
+            //-Iterar un arreglo en PUG
+            ul
+                each item in arreglo
+                    li=`Item: ${item}`

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi página en EJS</title>
+</head>
+<body>
+    <% const estilo = "color:crimson;"; %>
+
+    <!-- IF en EJS: se incrusta directamente el código Javascript -->
+    <% if (showSaludo) { %>
+        <h1 style=<%= estilo %>>Hola a todos desde EJS</h1>
+    <% } %>
+
+    <ul>
+        <!-- FOREACH en EJS: se incrusta directamente el código Javascript -->
+        <% arreglo.forEach(item => { %>
+            <li><%= `Item ${item}` %></li>
+        <% }) %>
+    </ul>
+
+    <!-- Incluir una clase parcial y pasarle datos (objeto)-->
+    <%- include('./partials/imagen.ejs', {url:"https://ichef.bbci.co.uk/news/800/cpsprodpb/17C5/production/_108858060_4f35ff50-a5da-43fc-84db-0f66f0c7ef96.jpg.webp"}) %>
+    
+</body>
+</html>
